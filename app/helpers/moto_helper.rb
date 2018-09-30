@@ -1,0 +1,2 @@
+module MotoHelper
+end
