@@ -8,7 +8,8 @@ class MotosController < ApplicationController
     if params[:query].present?
       sql_query = " \
       motos.brand LIKE :query \
-      OR motos.name LIKE :query \
+      OR motos.model LIKE :query \
+      OR motos.moto_type LIKE :query\
     "
     @motos = @motos.where(sql_query, query: "%#{params[:query]}%")
     else
