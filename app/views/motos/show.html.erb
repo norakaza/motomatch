@@ -2,4 +2,5 @@
 
 <h2><%= @moto.year %></h2>
 <h2> Type: <%= @moto.moto_type %> Mileage: <%= @moto.mileage %></h2>
+<%= cl_image_tag @moto.photo, height: 300, width: 400, crop: :fill %>
 <p>Link to view all</p>

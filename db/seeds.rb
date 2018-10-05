@@ -24,6 +24,7 @@ BIRTH_YEAR = Date.today
   TYPE = ["Street", "Cruiser", "Sport bike", "Touring", "Sport touring", "Dual-sport", "Scooters and mopeds", "Off-road", "Enclosed", "Utility", "Tricycles"]
   MILES = (0..15000).to_a
   PARKING = ["own parking", "covered parking", "street"]
+  url = "https://res.cloudinary.com/deoafyurg/image/upload/v1538745799/MotoMatch/50cc/%D0%91%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_2.jpg"
   moto = Moto.new(
     brand: Faker::Vehicle.make,
     model: Faker::Vehicle.model,
@@ -31,8 +32,9 @@ BIRTH_YEAR = Date.today
     moto_type: TYPE.sample,
     mileage: MILES.sample,
     address: Faker::Address.city,
-    user: User.last
+    user: User.last,
     )
+  moto.remote_photo_url = url
   moto.save!
 end
 

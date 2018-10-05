@@ -16,4 +16,8 @@ class MotosController < ApplicationController
       @motos = Moto.all
     end
   end
+
+  def motos_params
+  params.require(:moto).permit(:name, :model, :photo, :moto_type)
+end
 end
